@@ -26,6 +26,7 @@
 
 <script>
   import Alert from "./Alert"
+  import axios from "axios"
     export default {
         name: 'customers',
         data() {
@@ -40,9 +41,9 @@
       },
       methods:{
           fetchCustomers(){
-            this.$http.get("http://localhost:3000/users")
+            axios.get("http://localhost:3000/users")
               .then(response => {
-                this.customers = response.body;
+                this.customers = response.data;
               })
           },
         filterBy(customers,value){

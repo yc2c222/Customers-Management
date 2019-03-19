@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from "vue-router"
-import VueResource from "vue-resource"
+//import VueResource from "vue-resource"
+import axios from "axios"
 import App from './App'
 import Customers from "./components/Customers"
 import About from "./components/About"
@@ -13,7 +14,9 @@ import Edit from "./components/Edit"
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
-Vue.use(VueResource);
+//Vue.use(VueResource);
+//或在组件中单独import 直接使用axios.get
+Vue.prototype.$http = axios;
 //设置路由
 const router = new VueRouter({
   mode:"history",

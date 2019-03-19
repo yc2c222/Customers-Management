@@ -33,7 +33,7 @@
         fetchCustomers(id){
           this.$http.get("http://localhost:3000/users/" + id)
             .then(response => {
-              this.customer = response.body;
+              this.customer = response.data;
               console.log(this.customer)
             })
         },
